@@ -24,7 +24,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - traefik.enable=true
-      - traefik.http.routers.whoami.rule=Host(`hub.eoastest.xyz`) && PathPrefix(`/try1`)
+      - traefik.http.routers.whoami.rule=Host(`hub.phaustin.org`) && PathPrefix(`/try1`)
       - traefik.http.routers.whoami.tls=true
       - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
       - traefik.http.routers.whoami.service=whoami
@@ -40,7 +40,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - traefik.enable=true
-      - traefik.http.routers.whomi2.rule=Host(`hub.eoastest.xyz`) && PathPrefix(`/try2`)
+      - traefik.http.routers.whomi2.rule=Host(`hub.phaustin.org`) && PathPrefix(`/try2`)
       - traefik.http.routers.whomi2.tls=true
       - traefik.http.routers.whomi2.tls.certresolver=lets-encrypt
       - traefik.http.routers.whomi2.service=whomi2
