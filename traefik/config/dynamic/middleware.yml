@@ -26,3 +26,7 @@ http:
       basicAuth:
         users:
           - "cmip6:$2y$05$2N25nFVO13/Xxv4JUetyou5eo2xnrZ5rUHXJF0/P59gwZUGgZUdrC"
+    a301Auth:
+      basicAuth:
+        users:
+          - "a301:$2y$05$2N25nFVO13/Xxv4JUetyou5eo2xnrZ5rUHXJF0/P59gwZUGgZUdrC"
