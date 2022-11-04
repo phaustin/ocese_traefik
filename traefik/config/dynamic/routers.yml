@@ -4,12 +4,10 @@
 http:
   routers:
     api:
-      rule: Host(`eoastest.xyz`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
+      rule: Host(`dashboard.eoas.ubc.ca`) && (PathPrefix(`/api`) || PathPrefix(`/dash`))
       service: api@internal
       entrypoints:
         - websecure
       middlewares:
         - dashboardAuth@file
         - dashboard-strip-slash@file
-      tls:
-        certResolver: lets-encrypt

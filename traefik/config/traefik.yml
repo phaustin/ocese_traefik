@@ -12,15 +12,6 @@ entryPoints:
   websecure:
     address: :443
 
-certificatesResolvers:
-  lets-encrypt:
-    acme:
-      email: paustin@eoas.ubc.ca
-      storage: /etc/traefik/acme.json
-      dnsChallenge:
-        provider: digitalocean
-        delayBeforeCheck: 0
-
 log:
   level: DEBUG
 

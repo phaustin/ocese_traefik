@@ -2,7 +2,7 @@ http:
   middlewares:
     dashboard-strip-slash:
         redirectRegex:
-          regex: (^.*\/dashboard$)
+          regex: (^.*\/dash$)
           replacement: "${1}/"
           permanent: false
     strip-prefix-start:
