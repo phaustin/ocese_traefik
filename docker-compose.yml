@@ -13,6 +13,17 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${PWD}/traefik/config:/etc/traefik
+    labels:
+      - traefik.enable=true
+      #___ set traefik dashboard + API. The API is available at: mydomain.club/api/http/routers
+      - "traefik.http.routers.traefik.rule=Host(`dashboard.eoas.ubc.ca`) && (PathPrefix(`/traefik`) || PathPrefix(`/api`))"
+      - "traefik.http.routers.traefik.service=api@internal"
+      #___ set TLS (https)
+      - "traefik.http.routers.traefik.tls=true"  
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      #___ specific middleware for traefik (it enables the dashboard at mydomain.com/traefik)
+      - "traefik.http.routers.traefik.middlewares=traefik-strip,dashboardAuth@file" 
+      - "traefik.http.middlewares.traefik-strip.stripprefix.prefixes=/traefik"
     container_name: traefik
     restart: always
 
@@ -24,7 +35,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - traefik.enable=true
+<<<<<<< HEAD
       - traefik.http.routers.whoami.rule=Host(`hub.phaustin.org`) && PathPrefix(`/try1`)
+=======
+      - traefik.http.routers.whoami.rule=Host(`web.phaustin.org`) && PathPrefix(`/try1`)
+>>>>>>> checkpoint
       - traefik.http.routers.whoami.tls=true
       - traefik.http.routers.whoami.tls.certresolver=lets-encrypt
       - traefik.http.routers.whoami.service=whoami
@@ -40,7 +55,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     labels:
       - traefik.enable=true
+<<<<<<< HEAD
       - traefik.http.routers.whomi2.rule=Host(`hub.phaustin.org`) && PathPrefix(`/try2`)
+=======
+      - traefik.http.routers.whomi2.rule=Host(`web.phaustin.org`) && PathPrefix(`/try2`)
+>>>>>>> checkpoint
       - traefik.http.routers.whomi2.tls=true
       - traefik.http.routers.whomi2.tls.certresolver=lets-encrypt
       - traefik.http.routers.whomi2.service=whomi2
