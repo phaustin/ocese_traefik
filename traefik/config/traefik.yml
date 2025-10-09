@@ -23,6 +23,7 @@ providers:
     watch: true
   file:
     directory: /etc/traefik/dynamic/
+    watch: true
     
 api:
   # Dashboard
