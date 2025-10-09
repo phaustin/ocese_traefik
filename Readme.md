@@ -6,3 +6,9 @@ the yml files config/dynamic are touched.
 
 See this discussion:  https://community.traefik.io/t/how-to-renew-update-user-defined-custom-certificates/20598/6
 
+You can also restart traefik from ~/repos/ocese_traefik by doing:
+
+      docker compose down
+      docker compose up -d
+      
+
