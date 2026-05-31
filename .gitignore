@@ -1,2 +1,4 @@
 acme.json
 certs/
+*DS_Store*
+*DS_Store

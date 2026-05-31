@@ -1,0 +1,42 @@
+# /etc/traefik/traefik.yml
+
+entryPoints:
+  web:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+
+  websecure:
+    address: :443
+    http:
+      tls:
+        domains:
+          - main: "localhost"
+            sans:
+              - "*.localhost"
+
+serversTransport:
+   insecureSkipVerify: true
+
+log:
+  level: DEBUG
+
+providers:
+  docker:
+    endpoint: unix:///var/run/docker.sock
+    exposedByDefault: false
+    network: proxy_aug07
+    watch: true
+  file:
+    directory: /etc/traefik/dynamic/
+    
+api:
+  # Dashboard
+  #
+  # Optional
+  # Default: true
+  #
+  dashboard: true

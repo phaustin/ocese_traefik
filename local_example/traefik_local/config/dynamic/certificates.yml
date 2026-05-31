@@ -1,0 +1,6 @@
+tls:
+  certificates:
+    # first certificate
+    - certFile: "/etc/traefik/certs/localhost.crt"
+      keyFile: "/etc/traefik/certs/localhost.key"
+      
