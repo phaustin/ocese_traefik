@@ -16,7 +16,6 @@ http:
       basicAuth:
         users:
           - "eoas:$2y$05$2N25nFVO13/Xxv4JUetyou5eo2xnrZ5rUHXJF0/P59gwZUGgZUdrC"
-# https://community.traefik.io/t/middleware-to-add-the-if-needed/1895/19
     cmip6Auth:
       basicAuth:
         users:
