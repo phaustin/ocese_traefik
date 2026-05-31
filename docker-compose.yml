@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   traefik:
-    image: "traefik:v2.5"
+    image: "traefik:v3.6"
     ports:
       - 80:80
       - 443:443
@@ -20,7 +18,7 @@ services:
       - "traefik.http.routers.traefik.tls=true"  
       - "traefik.http.routers.traefik.entrypoints=websecure"
       #___ specific middleware for traefik (it enables the dashboard at mydomain.com/traefik)
-      - "traefik.http.routers.traefik.middlewares=traefik-strip,dashboardAuth@file" 
+      - "traefik.http.routers.traefik.middlewares=traefik-strip" 
       - "traefik.http.middlewares.traefik-strip.stripprefix.prefixes=/traefik"
     container_name: traefik
     restart: always

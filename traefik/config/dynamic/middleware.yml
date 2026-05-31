@@ -1,10 +1,5 @@
 http:
   middlewares:
-    dashboard-strip-slash:
-        redirectRegex:
-          regex: (^.*\/dash$)
-          replacement: "${1}/"
-          permanent: false
     strip-prefix-start:
       redirectregex:
         regex:
