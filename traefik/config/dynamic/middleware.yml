@@ -1,17 +1,5 @@
 http:
   middlewares:
-    strip-prefix-start:
-      redirectregex:
-        regex:
-          - "^(https?://[^/]+/[a-z0-9_]+)$"
-        replacement:
-          - "${1}/"
-        permanent:
-          - true
-    strip-prefix-end:
-      stripprefixregex:
-        regex:
-          - "/[a-z0-9_]+"
     dashboardAuth:
       basicAuth:
         users:

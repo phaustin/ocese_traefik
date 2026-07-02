@@ -1,6 +1,5 @@
 tls:
   certificates:
-    # first certificate
     - certFile: /etc/traefik/certs/eoas.pem
       keyFile: /etc/traefik/certs/eoas.key
       
